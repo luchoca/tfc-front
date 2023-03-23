@@ -1,0 +1,17 @@
+.main-icon {
+  padding-right: 5px;
+  vertical-align: text-bottom;
+}
+
+.main-app-toolbar {
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  color: white;
+  background-color: black;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

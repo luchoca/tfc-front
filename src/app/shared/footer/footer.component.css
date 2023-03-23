@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap");
+
+section{
+  background-size: cover;
+  background: linear-gradient(-900deg, rgb(2, 13, 77), rgba(0, 0, 0, 0.8)),
+  url(https://ik.imagekit.io/lvh0tltbeph/SofkaU/banner_footer_gXa1QQm3y.png?ik-sdk-version=javascript-1.4.3&updatedAt=1645666379801);
+  transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s ;
+}
+
+.contenido {
+ 
+  padding: 40px 0px 40px 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+p,h2{
+  text-align: center;
+  margin: 1%;
+  padding: 1%;
+  color: rgb(255, 255, 255);
+}
+.titulo img{
+  height: auto;
+  max-width: 100%;
+  width: 400px;  
+  border: none;
+}
+.cont-img,.cont-sofka,.cont-siguenos{
+  margin: 20px;
+}
+.cont-sofka{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.derechos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.cont-img{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+img{
+  margin: 15px;
+}
