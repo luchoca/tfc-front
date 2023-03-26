@@ -3,6 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  firebase: {
+    projectId: 'tfc-storage',
+    appId: '1:1093950249993:web:aff482485dd676a7982cd8',
+    storageBucket: 'tfc-storage.appspot.com',
+    locationId: 'southamerica-east1',
+    apiKey: 'AIzaSyCV4CRkO6cAihiefQj5MQ6BjUvp2306DAw',
+    authDomain: 'tfc-storage.firebaseapp.com',
+    messagingSenderId: '1093950249993',
+    measurementId: 'G-BYDGDLFZWJ',
+  },
   production: false,
   apiBase: "http://localhost:3000/",
 };

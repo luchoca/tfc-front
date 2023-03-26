@@ -8,24 +8,23 @@ import { ClientModule } from './modules/client/client.module';
 import { ProductPurchasedModule } from './modules/product-purchased/product-purchased.module';
 import { ProductModule } from './modules/product/product.module';
 import { PurchaseModule } from './modules/purchase/purchase.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
 import { NavigationComponent } from './shared/navigation/navigation.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
+
 import { HeaderComponent } from './shared/header/header.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { CreateHambuModule } from './modules/create-hambu/create-hambu.module';
+import { AdminModule } from './modules/admin/admin.module';
+import { MaterialModule } from './modules/material/material.module';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavigationComponent,
-    HeaderComponent,
-  ],
+  declarations: [AppComponent, NavigationComponent, HeaderComponent],
   imports: [
+    MaterialModule,
+    AdminModule,
+    CreateHambuModule,
     BrowserModule,
     AppRoutingModule,
     ClientModule,
@@ -33,16 +32,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     PurchaseModule,
     ProductPurchasedModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    LayoutModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatDialogModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

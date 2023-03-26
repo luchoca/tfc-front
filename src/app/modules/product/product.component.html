@@ -2,21 +2,21 @@
   <mat-spinner *ngIf="productsDto.length === 0"></mat-spinner>
 
   <mat-card *ngFor="let product of productsDto" class="e-product-card">
-    <mat-card-header>
+    <img src="../../assets/hambu-tfc2.jpg" class="e-product-img" />
+    <mat-card-header class="header-mat">
       <mat-card-title>{{ product.nombre }}</mat-card-title>
       <mat-card-subtitle
         >Precio: $500 / Stock: {{ product.stock }}</mat-card-subtitle
       >
     </mat-card-header>
-    <mat-card-content>
+    <!-- <mat-card-content>
       <p *ngIf="product.descripcion">
         {{ product.descripcion }}
       </p>
       <p *ngIf="!product.descripcion">
         {{ "Descripción de prueba" }}
       </p>
-      <img src="../../assets/hambu-tfc2.jpg" class="e-product-img" />
-    </mat-card-content>
+    </mat-card-content> -->
     <mat-card-actions>
       <button
         mat-flat-button

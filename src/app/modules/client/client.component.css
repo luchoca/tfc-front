@@ -1,0 +1,26 @@
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* p.texto {
+  font-family: Lato;
+} */
+
+.fs-Logo {
+  width: 150px;
+  height: 150px;
+  fill: red;
+}
+
+.mat-icon {
+  fill: red;
+}
+
+.google-button,
+.logout-button {
+  margin: 1%;
+  max-width: 10%;
+  font-size: 45%;
+}

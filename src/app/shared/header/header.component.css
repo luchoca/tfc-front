@@ -16,7 +16,7 @@
 }
 
 .rancia:hover {
-  color: orange;
+  color: #ffc72c;
   cursor: pointer;
 }
 
@@ -24,4 +24,18 @@
 .main-app-toolbar,
 .mat-toolbar-single-row {
   max-height: 12%;
+}
+
+span {
+  margin-top: 4.4%;
+  margin-right: 10%;
+}
+
+button:hover {
+  color: #ffc72c;
+}
+
+mat-toolbar {
+  display: flex;
+  flex-wrap: wrap;
 }

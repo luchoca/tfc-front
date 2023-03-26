@@ -1,14 +1,22 @@
 .e-product-card {
-  max-width: 22%;
-  max-height: 5%;
+  width: 22%;
+  height: 5%;
+  display: flex;
+}
+.header-mat {
+  padding: 5%;
+}
+app-products-div {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 img.e-product-img {
   height: 80%;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  border-radius: 4%;
+  border-radius: 2%;
 }
 .e-product-card:hover {
   -webkit-transform: scale(0.9);
@@ -16,14 +24,9 @@ img.e-product-img {
 }
 
 div.app-products-div {
-  padding: 13px;
-  margin-top: 5%;
-}
-
-.app-products-div {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 5%;
 }
 
 mat-card {
@@ -57,12 +60,17 @@ button[disabled] {
   color: #666666;
 }
 
+button:hover {
+  color: #ffc72c;
+}
+
 .mat-mdc-card-actions,
 .mdc-card__actions {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   text-align: center;
+  flex-wrap: wrap;
 }
 .mat-mdc-card-content {
   display: flex;
@@ -70,4 +78,11 @@ button[disabled] {
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
 }
+
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #ffc72c;
+}
+
+/* rojo mc donal #DA291C */
