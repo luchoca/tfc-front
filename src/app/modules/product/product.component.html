@@ -1,5 +1,8 @@
 <div class="app-products-div">
-  <mat-spinner *ngIf="productsDto.length === 0"></mat-spinner>
+  <mat-spinner
+    *ngIf="productsDto.length === 0"
+    style="margin: 0 auto"
+  ></mat-spinner>
 
   <mat-card *ngFor="let product of productsDto" class="e-product-card">
     <img src="../../assets/hambu-tfc2.jpg" class="e-product-img" />

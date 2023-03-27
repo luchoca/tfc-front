@@ -10,18 +10,20 @@ import { ProductModule } from './modules/product/product.module';
 import { PurchaseModule } from './modules/purchase/purchase.module';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 
-import { HeaderComponent } from './shared/header/header.component';
 import { CreateHambuModule } from './modules/create-hambu/create-hambu.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { MaterialModule } from './modules/material/material.module';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideStorage,getStorage } from '@angular/fire/storage';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { HeaderModule } from './shared/header/header.module';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, HeaderComponent],
+  declarations: [AppComponent, NavigationComponent],
   imports: [
+    HeaderModule,
     MaterialModule,
     AdminModule,
     CreateHambuModule,
@@ -36,7 +38,10 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
