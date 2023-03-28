@@ -1,25 +1,33 @@
 <div class="formulario">
   <mat-form-field formGroup="formLogin" (ngSubmit)="onRegister()">
     <div class="email">
-      <mat-label class="form-label">Email</mat-label>
-      <input type="text" class="form-control" formControlName="email" />
+      <!-- <mat-label class="form-label">Email</mat-label> -->
+      <input
+        placeholder="Intrudce tu email"
+        type="text"
+        class="form-control"
+        formControlName="email"
+      />
     </div>
     <div class="mb-3">
-      <label class="form-label">Password</label>
-      <input type="password" class="form-control" formControlName="password" />
+      <!-- <mat-label class="form-label">Password</mat-label> -->
+      <input
+        placeholder="Intrudce tu pasword"
+        type="password"
+        class="form-control"
+        formControlName="password"
+      />
     </div>
-    <input mat-input type="submit" value="Registrarse" (click)="onRegister()" />
+    <button mat-flat-button class="registerButton" (click)="onRegister()">
+      Registrarse
+    </button>
   </mat-form-field>
-  <button
-    class="google-button"
-    (click)="loginConGoogle()"
-    mat-button
-    style="padding: 1rem; background-color: rgb(251, 251, 240)"
-  >
+  <button mat-button class="google-button" (click)="loginConGoogle()">
     <mat-icon style="width: 50px; height: 30px" svgIcon="logo"></mat-icon
     >Iniciar Sesion con Google
   </button>
-  <button
+  <!-- <button
+    disabled="true"
     style="background-color: rgb(248, 50, 50)"
     mat-button
     (click)="logOut()"
@@ -27,5 +35,5 @@
   >
     <span class="material-icons">logout</span>
     Logout
-  </button>
+  </button> -->
 </div>

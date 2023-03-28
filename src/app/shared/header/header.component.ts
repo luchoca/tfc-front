@@ -8,6 +8,7 @@ import { ProductPurchasedService } from 'src/app/modules/product-purchased/servi
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  isVisible = true;
   constructor(private service: ProductPurchasedService) {}
 
   @ViewChild(MatMenuTrigger)

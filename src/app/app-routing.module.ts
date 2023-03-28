@@ -16,6 +16,24 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
 ];
 
+// const routes2: Routes = [
+//   {
+//     path: '',
+//     component: UserComponent,
+//   },
+//   {
+//     path: 'buy',
+//     component: BuyComponent,
+//   },
+//   {
+//     path: 'products',
+//     loadChildren: () =>
+//       import('./products/products.module').then(
+//         (module) => module.ProductsModule
+//       ),
+//   },
+// ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

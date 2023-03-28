@@ -1,7 +1,6 @@
 .formulario {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 /* p.texto {
@@ -20,7 +19,20 @@
 
 .google-button,
 .logout-button {
+  background-color: white;
   margin: 1%;
   max-width: 10%;
   font-size: 45%;
+}
+
+.registerButton {
+  background-color: black;
+  color: antiquewhite;
+  font-size: 10px;
+  margin: 25%;
+}
+
+input {
+  padding: 5%;
+  margin-bottom: 5%;
 }
