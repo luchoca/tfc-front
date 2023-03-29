@@ -1,92 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  FormGroupDirective,
-  NgForm,
-  Validators,
-} from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+
 import { ClientService } from './service/client.service';
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(
-    control: FormControl | null,
-    form: FormGroupDirective | NgForm | null
-  ): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(
-      control &&
-      control.invalid &&
-      (control.dirty || control.touched || isSubmitted)
-    );
-  }
-}
+
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
   styleUrls: ['./client.component.css'],
 })
 export class ClientComponent implements OnInit {
-  formReg: FormGroup;
-  googleLogoURL =
-    'https://raw.githubusercontent.com/fireflysemantics/logo/master/Google.svg';
-  constructor(
-    private clientService: ClientService,
-    private router: Router,
-    private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
-  ) {
-    this.formReg = new FormGroup({
-      email: new FormControl(),
-      password: new FormControl(),
-    });
-    this.matIconRegistry.addSvgIcon(
-      'logo',
-      this.domSanitizer.bypassSecurityTrustResourceUrl(this.googleLogoURL)
-    );
+  constructor(private clientService: ClientService) {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
-
-  ngOnInit(): void {}
-  // FUNCION PARA REGISTRAR
-  onRegister() {
-    this.clientService
-      .register(this.formReg.value)
-      .then((response) => {
-        console.log(response);
-        // this.router.navigate(['/login']);
-      })
-      .catch((error) => console.log(error));
-  }
-
-  loginConGoogle() {
-    this.clientService
-      .loginWithGoogle()
-      .then((response) => {
-        console.log(response);
-        this.router.navigate(['/products']);
-      })
-      .catch((error) => console.log(error));
-  }
-
-  logOut() {
-    this.clientService
-      .loginWithGoogle()
-      .then((response) => {
-        console.log(response);
-        // this.router.navigate(['/main']);
-      })
-      .catch((error) => console.log(error));
-  }
-}
-
-export class InputErrorStateMatcherExample {
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-
-  matcher = new MyErrorStateMatcher();
 }
