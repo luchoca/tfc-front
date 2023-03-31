@@ -5,17 +5,17 @@ import { ProductPurchasedService } from 'src/app/modules/product-purchased/servi
 @Component({
   selector: 'app-purchase-history',
   templateUrl: './purchase-history.component.html',
-  styleUrls: ['./purchase-history.component.scss']
+  styleUrls: ['./purchase-history.component.scss'],
 })
-export class PurchaseHistoryComponent implements OnInit{
+export class PurchaseHistoryComponent implements OnInit {
   displayedColumns: string[] = ['Nombre', 'Descripcion', 'Cantidad'];
-  constructor(private _productPurchasedService: ProductPurchasedService){}
-  products_purchased: ProductPurchasedDto[] = []
+  constructor(private _productPurchasedService: ProductPurchasedService) {}
+  products_purchased: ProductPurchasedDto[] = [];
   ngOnInit(): void {
-      this._productPurchasedService
-        .getProductsPurchasedByClientId("48485074")
-        .subscribe((products: ProductPurchasedDto[]) => {
-          this.products_purchased = products;
-        })
+    this._productPurchasedService
+      .getProductsPurchasedByClientId('48485074')
+      .subscribe((products: ProductPurchasedDto[]) => {
+        this.products_purchased = products;
+      });
   }
 }

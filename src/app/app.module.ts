@@ -23,7 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, LoginComponent],
+  declarations: [AppComponent, NavigationComponent],
   imports: [
     LoginModule,
     HeaderModule,

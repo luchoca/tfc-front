@@ -7,15 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { PurchaseHistoryComponent } from '../../shared/purchase-history/purchase-history.component';
 
 @NgModule({
-  declarations: [
-    PurchaseComponent,
-    PurchaseHistoryComponent
-  ],
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatTableModule,
-    MatButtonModule
-  ]
+  declarations: [PurchaseComponent, PurchaseHistoryComponent],
+  imports: [CommonModule, MatIconModule, MatTableModule, MatButtonModule],
 })
-export class PurchaseModule { }
+export class PurchaseModule {}

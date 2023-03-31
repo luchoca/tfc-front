@@ -33,6 +33,7 @@ export class LoginComponent {
   formReg: FormGroup;
   googleLogoURL =
     'https://raw.githubusercontent.com/fireflysemantics/logo/master/Google.svg';
+
   constructor(
     private clientService: ClientService,
     private router: Router,
@@ -40,8 +41,11 @@ export class LoginComponent {
     private domSanitizer: DomSanitizer
   ) {
     this.formReg = new FormGroup({
-      email: new FormControl(),
-      password: new FormControl(),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
     });
     this.matIconRegistry.addSvgIcon(
       'logo',
@@ -56,7 +60,7 @@ export class LoginComponent {
       .register(this.formReg.value)
       .then((response) => {
         console.log(response);
-        // this.router.navigate(['/login']);
+        this.router.navigate(['/products']);
       })
       .catch((error) => console.log(error));
   }
@@ -76,7 +80,7 @@ export class LoginComponent {
       .loginWithGoogle()
       .then((response) => {
         console.log(response);
-        // this.router.navigate(['/main']);
+        this.router.navigate(['']);
       })
       .catch((error) => console.log(error));
   }

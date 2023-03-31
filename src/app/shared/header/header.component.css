@@ -23,7 +23,7 @@
 .mat-toolbar,
 .main-app-toolbar,
 .mat-toolbar-single-row {
-  max-height: 9%;
+  max-height: 10%;
 }
 
 span {

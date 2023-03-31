@@ -21,6 +21,7 @@ import {
   MatFormFieldControl,
   MatFormFieldModule,
 } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -38,6 +39,7 @@ import {
     CommonModule,
     MatInputModule,
     MatFormFieldModule,
+    ReactiveFormsModule,
   ],
   exports: [
     MatDialogModule,
@@ -54,6 +56,8 @@ import {
     MatListModule,
     MatDialogModule,
     CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
   ],
 })
 export class MaterialModule {}

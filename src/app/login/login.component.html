@@ -1,22 +1,37 @@
 <div class="formulario">
-  <mat-form-field formGroup="formLogin" (ngSubmit)="onRegister()">
+  <mat-form-field [formGroup]="formReg" (ngSubmit)="onRegister()">
     <div class="email">
       <!-- <mat-label class="form-label">Email</mat-label> -->
       <input
+        matInput
         placeholder="Introduce tu email"
         type="text"
         class="form-control"
         formControlName="email"
       />
+      <span
+        style="color: red"
+        *ngIf="this.formReg.get('email')?.errors?.['email']"
+      >
+        El mail no es válido
+      </span>
     </div>
-    <div class="mb-3">
+    <br />
+    <div class="password">
       <!-- <mat-label class="form-label">Password</mat-label> -->
       <input
+        matInput
         placeholder="Introduce tu pasword"
         type="password"
         class="form-control"
         formControlName="password"
       />
+      <span
+        style="color: red"
+        *ngIf="this.formReg.get('password')?.errors?.['minlength']"
+      >
+        Debe tener como mínimo 6 caracteres
+      </span>
     </div>
     <button mat-flat-button class="registerButton" (click)="onRegister()">
       Registrarse
