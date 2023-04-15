@@ -1,0 +1,36 @@
+<mat-toolbar class="main-app-toolbar">
+  <div class="rancia" routerLink="/">
+    <span class="material-icons">lunch_dining</span>
+    <h2>T F C</h2>
+  </div>
+  <span class="example-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/client/hambu-personal">
+      Tu Hamburguesa <mat-icon>lunch_dining</mat-icon>
+    </button>
+    <button mat-menu-item routerLink="/client/purchase-history">
+      Historial <mat-icon>history</mat-icon>
+    </button>
+    <button mat-menu-item routerLink="/admin">
+      Admin <mat-icon>settings</mat-icon>
+    </button>
+    <button mat-menu-item routerLink="/purchase">
+      Carrito
+      <mat-icon [matBadge]="algo()" matBadgeColor="warn"
+        >shopping_cart</mat-icon
+      >
+    </button>
+  </mat-menu>
+  <!-- <button mat-button routerLink="/products">Productos</button>
+  <button mat-button routerLink="/hambu-personal">Tu Hamburguesa</button>
+  <button mat-button routerLink="/purchase-history">Historial</button>
+
+  <button mat-button routerLink="/admin">
+    Admin
+    <mat-icon>settings</mat-icon>
+  </button>
+  <button mat-button routerLink="/purchase">
+    <mat-icon>shopping_cart</mat-icon>
+  </button> -->
+</mat-toolbar>

@@ -1,0 +1,44 @@
+.mat-green {
+  background-color: rgb(189, 81, 4);
+  color: #fff;
+}
+
+.mat-red {
+  background-color: rgb(191, 33, 33);
+  color: #fff;
+}
+
+.mat-mdc-dialog-actions,
+.mdc-dialog__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.mat-card-title {
+  text-align: center;
+}
+
+.mat-mdc-form-field-infix,
+.ng-tns-c10-3 {
+  max-width: 10px;
+}
+
+.mat-mdc-text-field-wrapper,
+.mdc-text-field,
+.ng-tns-c10-0,
+.mdc-text-field--filled {
+}
+.mat-mdc-dialog-surface,
+.mdc-dialog__surface {
+  max-height: 50%;
+}
+
+button {
+  max-width: 10%;
+  font-size: 65%;
+}
+
+h1 {
+  text-align: center;
+}

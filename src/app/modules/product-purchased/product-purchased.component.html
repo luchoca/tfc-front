@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>{{ data.product.nombre }}</h1>
+<mat-form-field class="example-form-field">
+  <mat-label>Ingrese una cantidad</mat-label>
+  <input
+    matInput
+    type="number"
+    value="1"
+    min="1"
+    max="{{ data.product.stock }}"
+    [(ngModel)]="quantity"
+  />
+</mat-form-field>
+<div mat-dialog-actions>
+  <button mat-flat-button color="red" (click)="onNoClick()">Atras</button>
+  <button mat-flat-button color="green" (click)="onYesClick()">Agregar</button>
+</div>

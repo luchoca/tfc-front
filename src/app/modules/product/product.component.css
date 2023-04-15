@@ -1,0 +1,88 @@
+.e-product-card {
+  width: 22%;
+  height: 5%;
+  display: flex;
+}
+.header-mat {
+  padding: 5%;
+}
+app-products-div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img.e-product-img {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 2%;
+}
+.e-product-card:hover {
+  -webkit-transform: scale(0.9);
+  transform: scale(1.1);
+}
+
+div.app-products-div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5%;
+}
+
+mat-card {
+  margin: 0 auto;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media (max-width: 50%) {
+  .e-product-card {
+    margin-top: 11px;
+    width: 50%;
+  }
+  img.e-product-img {
+    margin: 0 auto;
+    height: 50%;
+    width: 100%;
+  }
+}
+
+.mat-green {
+  background-color: rgb(8, 9, 7);
+  color: #fff;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+}
+
+button:hover {
+  color: #ffc72c;
+}
+
+.mat-mdc-card-actions,
+.mdc-card__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.mat-mdc-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #ffc72c;
+}
+
+/* rojo mc donal #DA291C */
