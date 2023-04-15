@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-<<<<<<< HEAD
-import { ProductComponent } from './modules/product/product.component';
-import { PurchaseComponent } from './modules/purchase/purchase.component';
-=======
 import { AdminComponent } from './modules/admin/admin.component';
 import { ClientComponent } from './modules/client/client.component';
 import { CreateHambuComponent } from './modules/create-hambu/create-hambu.component';
 import { ProductComponent } from './modules/product/product.component';
 import { PurchaseComponent } from './modules/purchase/purchase.component';
 import { PurchaseHistoryComponent } from './shared/purchase-history/purchase-history.component';
->>>>>>> 5e0c0e9cb4902ddfa136fc079abd8bcceaaf2637
 
 // const routes: Routes = [
 //   { path: '', component: LoginComponent },

@@ -10,11 +10,7 @@ import { ProductModule } from './modules/product/product.module';
 import { PurchaseModule } from './modules/purchase/purchase.module';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 
-<<<<<<< HEAD
 import { CreateHambuModule } from './modules/client/create-hambu/create-hambu.module';
-=======
-import { CreateHambuModule } from './modules/create-hambu/create-hambu.module';
->>>>>>> 5e0c0e9cb4902ddfa136fc079abd8bcceaaf2637
 import { AdminModule } from './modules/admin/admin.module';
 import { MaterialModule } from './modules/material/material.module';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
