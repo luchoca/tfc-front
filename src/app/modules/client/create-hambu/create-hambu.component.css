@@ -1,0 +1,18 @@
+mat-header-cell {
+}
+
+.table-container {
+  margin: 50%;
+}
+.tablas {
+  padding-left: 13%;
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+td,
+mat-cell {
+  border-bottom-style: none;
+}
