@@ -29,7 +29,6 @@ import { LoginModule } from './login/login.module';
     HeaderModule,
     MaterialModule,
     AdminModule,
-    CreateHambuModule,
     BrowserModule,
     AppRoutingModule,
     ClientModule,
