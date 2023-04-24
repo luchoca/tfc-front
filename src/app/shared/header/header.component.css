@@ -6,6 +6,7 @@
   background-color: rgb(7, 8, 6);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.244);
   color: #fafafa;
+  height: 14%;
 }
 
 .rancia {
@@ -18,12 +19,6 @@
 .rancia:hover {
   color: #ffc72c;
   cursor: pointer;
-}
-
-.mat-toolbar,
-.main-app-toolbar,
-.mat-toolbar-single-row {
-  max-height: 10%;
 }
 
 span {

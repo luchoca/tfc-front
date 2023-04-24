@@ -1,6 +1,6 @@
 <div class="formulario">
-  <mat-form-field [formGroup]="formReg" (ngSubmit)="onRegister()">
-    <div class="email">
+  <div class="formContainer" [formGroup]="formReg" (ngSubmit)="onRegister()">
+    <mat-form-field appearance="outline" class="email">
       <!-- <mat-label class="form-label">Email</mat-label> -->
       <input
         matInput
@@ -9,15 +9,15 @@
         class="form-control"
         formControlName="email"
       />
-      <span
+      <mat-error
         style="color: red"
         *ngIf="this.formReg.get('email')?.errors?.['email']"
       >
         El mail no es válido
-      </span>
-    </div>
+      </mat-error>
+    </mat-form-field>
     <br />
-    <div class="password">
+    <mat-form-field appearance="outline" class="password">
       <!-- <mat-label class="form-label">Password</mat-label> -->
       <input
         matInput
@@ -26,17 +26,17 @@
         class="form-control"
         formControlName="password"
       />
-      <span
+      <mat-error
         style="color: red"
         *ngIf="this.formReg.get('password')?.errors?.['minlength']"
       >
         Debe tener como mínimo 6 caracteres
-      </span>
-    </div>
+      </mat-error>
+    </mat-form-field>
     <button mat-flat-button class="registerButton" (click)="onRegister()">
       Registrarse
     </button>
-  </mat-form-field>
+  </div>
   <button mat-button class="google-button" (click)="loginConGoogle()">
     <mat-icon style="width: 50px; height: 30px" svgIcon="logo"></mat-icon
     >Iniciar Sesion con Google
