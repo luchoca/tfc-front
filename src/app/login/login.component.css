@@ -40,6 +40,12 @@
 .registerButton:hover {
   color: #ffc72c;
 }
+
+.iniciarSesionButton {
+  background-color: rgb(217, 217, 217);
+  color: rgb(8, 8, 8);
+  margin-top: 10%;
+}
 /*
 input {
   padding: 5%;
