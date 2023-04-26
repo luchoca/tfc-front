@@ -1,4 +1,4 @@
-<div class="app-products-div">
+<!-- <div class="app-products-div">
   <mat-spinner
     *ngIf="productsDto.length === 0"
     style="margin: 0 auto"
@@ -12,19 +12,34 @@
         >Precio: $500 / Stock: {{ product.stock }}</mat-card-subtitle
       >
     </mat-card-header>
-    <!-- <mat-card-content>
-      <p *ngIf="product.descripcion">
-        {{ product.descripcion }}
-      </p>
-      <p *ngIf="!product.descripcion">
-        {{ "Descripción de prueba" }}
-      </p>
-    </mat-card-content> -->
+
     <mat-card-actions>
       <button
         mat-flat-button
         [disabled]="this.product.stock == 0"
         color="green"
+        (click)="openDialog(this.product)"
+      >
+        Agregar al carrito
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div> -->
+<div class="mat-card-container">
+  <mat-spinner class="spinner" *ngIf="productsDto.length === 0"></mat-spinner>
+  <mat-card class="mat-card-item" *ngFor="let product of productsDto">
+    <img mat-card-image src="../../assets/hambu-tfc2.jpg" />
+    <mat-card-header>
+      <mat-card-title style="color: black">{{ product.nombre }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="color: black">
+      <p>Stock :{{ product.stock }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        class="button"
+        mat-flat-button
+        [disabled]="this.product.stock == 0"
         (click)="openDialog(this.product)"
       >
         Agregar al carrito
