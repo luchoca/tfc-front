@@ -130,7 +130,14 @@ button[disabled] {
   background-color: #cccccc;
   color: #666666;
 }
-
+@media screen and (max-width: 767px) {
+  .mat-card-container {
+    justify-content: center;
+  }
+  /* .mat-card-item {
+    width: calc(33.33% - 10px);
+  } */
+}
 @media screen and (min-width: 768px) {
   .mat-card-item {
     width: calc(50% - 10px);
