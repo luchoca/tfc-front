@@ -118,6 +118,9 @@ button:hover {
   -webkit-transform: scale(0.9);
   transform: scale(1.05);
 }
+.content {
+  display: flex;
+}
 .button {
   background-color: black;
   color: antiquewhite;

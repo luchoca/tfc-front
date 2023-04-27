@@ -9,7 +9,5 @@ import { ClientService } from './service/client.service';
 })
 export class ClientComponent implements OnInit {
   constructor(private clientService: ClientService) {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  ngOnInit(): void {}
 }

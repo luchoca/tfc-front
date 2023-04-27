@@ -32,9 +32,15 @@
     <mat-card-header>
       <mat-card-title style="color: black">{{ product.nombre }}</mat-card-title>
     </mat-card-header>
-    <mat-card-content style="color: black">
-      <p>Stock :{{ product.stock }}</p>
-    </mat-card-content>
+    <div class="content">
+      <mat-card-content style="color: black">
+        <p>Stock :{{ product.stock }}</p>
+      </mat-card-content>
+      <mat-card-content style="align-items: center"
+        >Description/Ingredietes</mat-card-content
+      >
+    </div>
+
     <mat-card-actions>
       <button
         class="button"

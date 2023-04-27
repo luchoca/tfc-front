@@ -14,7 +14,6 @@
 
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef>Nombre</th>
-
           <td mat-cell *matCellDef="let element">{{ element.name }}</td>
         </ng-container>
 
@@ -28,7 +27,11 @@
         <ng-container matColumnDef="symbol">
           <th mat-header-cell *matHeaderCellDef>Stock</th>
           <td mat-cell *matCellDef="let element">
-            <mat-checkbox color="black"></mat-checkbox>
+            <mat-checkbox
+              type="checkbox"
+              (change)="toggleCheckbox()"
+              color="black"
+            ></mat-checkbox>
           </td>
         </ng-container>
 
@@ -62,7 +65,11 @@
         <ng-container matColumnDef="symbol">
           <th mat-header-cell *matHeaderCellDef>Stock</th>
           <td mat-cell *matCellDef="let element">
-            <mat-checkbox color="black"></mat-checkbox>
+            <mat-checkbox
+              type="checkbox"
+              (change)="toggleCheckbox()"
+              color="black"
+            ></mat-checkbox>
           </td>
         </ng-container>
 
@@ -96,7 +103,11 @@
         <ng-container matColumnDef="symbol">
           <th mat-header-cell *matHeaderCellDef>Stock</th>
           <td mat-cell *matCellDef="let element">
-            <mat-checkbox color="black"></mat-checkbox>
+            <mat-checkbox
+              type="checkbox"
+              (change)="toggleCheckbox()"
+              color="black"
+            ></mat-checkbox>
           </td>
         </ng-container>
 
@@ -130,7 +141,11 @@
         <ng-container matColumnDef="symbol">
           <th mat-header-cell *matHeaderCellDef>Stock</th>
           <td mat-cell *matCellDef="let element">
-            <mat-checkbox color="red"></mat-checkbox>
+            <mat-checkbox
+              type="checkbox"
+              (change)="toggleCheckbox()"
+              color="red"
+            ></mat-checkbox>
           </td>
         </ng-container>
 
@@ -139,10 +154,10 @@
       </table>
     </div>
   </div>
-</div>
-<div class="containerDelContainer">
   <div class="total-container">
-    <span>Total = $1000</span>
-    <button mat-raised-button>GUARDAR Y COMPRAR HAMBU</button>
+    <span>TOTAL = $1000</span>
+    <button (click)="pushearHambu()" mat-raised-button>
+      GUARDAR Y COMPRAR HAMBU
+    </button>
   </div>
 </div>

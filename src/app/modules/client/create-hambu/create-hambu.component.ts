@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatCheckbox } from '@angular/material/checkbox';
 export interface IngredientesSchema {
   name: string;
   precio: number;
@@ -31,9 +32,24 @@ const SALSAS_DATA: IngredientesSchema[] = [
   styleUrls: ['./create-hambu.component.css'],
 })
 export class CreateHambuComponent {
+  hambuPersonal: String[] = [];
   displayedColumns: string[] = ['name', 'precio', 'symbol'];
   proteinas = PROTEINA_DATA;
   vegetales = VEGETALES_DATA;
   topics = TOPICS_DATA;
   salsas = SALSAS_DATA;
+  isChecked: boolean;
+  constructor() {
+    this.isChecked = localStorage.getItem('isChecked') === 'true';
+  }
+  pushearHambu() {
+    if (this.isChecked === true) this.hambuPersonal.push('ALGO');
+    console.log(this.isChecked);
+    console.log(this.hambuPersonal);
+  }
+  toggleCheckbox() {
+    this.isChecked = this.isChecked;
+    localStorage.setItem('isChecked', this.isChecked.toString());
+    console.log(this.isChecked);
+  }
 }
