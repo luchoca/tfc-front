@@ -37,14 +37,17 @@
     <button mat-flat-button class="registerButton" (click)="onRegister()">
       Registrarse
     </button>
+    <hr />
     <button mat-flat-button class="iniciarSesionButton" routerLink="/products">
       Iniciar Sesion
     </button>
+    <hr />
+    <button mat-button class="google-button" (click)="loginConGoogle()">
+      <mat-icon style="width: 50px; height: 30px" svgIcon="logo"></mat-icon
+      >Iniciar Sesion con Google
+    </button>
   </div>
-  <button mat-button class="google-button" (click)="loginConGoogle()">
-    <mat-icon style="width: 50px; height: 30px" svgIcon="logo"></mat-icon
-    >Iniciar Sesion con Google
-  </button>
+
   <!-- <button
     disabled="true"
     style="background-color: rgb(248, 50, 50)"

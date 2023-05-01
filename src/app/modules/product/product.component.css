@@ -106,13 +106,18 @@ button:hover {
   justify-content: space-between;
   padding: 2%;
 }
-
+.descripcion {
+  /* margin-left: 40%; */
+  color: #8c8c8c;
+  max-width: 300px;
+}
+.stock {
+}
 .mat-card-item {
-  width: 80%;
-  height: 5%;
-  max-width: 400px;
+  max-width: 380px;
   margin-bottom: 20px;
   border-radius: 20px;
+  background-color: #f8f8f8;
 }
 .mat-card-item:hover {
   -webkit-transform: scale(0.9);
@@ -120,10 +125,12 @@ button:hover {
 }
 .content {
   display: flex;
+  align-items: flex-end;
 }
 .button {
   background-color: black;
   color: antiquewhite;
+  margin-left: 25%;
 }
 .button:hover {
   color: #ffc72c;

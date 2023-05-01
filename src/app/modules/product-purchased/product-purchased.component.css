@@ -7,7 +7,9 @@
   background-color: rgb(191, 33, 33);
   color: #fff;
 }
-
+ng-star-inserted {
+  max-width: 500px;
+}
 .mat-mdc-dialog-actions,
 .mdc-dialog__actions {
   display: flex;
@@ -21,7 +23,7 @@
 
 .mat-mdc-form-field-infix,
 .ng-tns-c10-3 {
-  max-width: 10px;
+  max-width: 50px;
 }
 
 .mat-mdc-text-field-wrapper,
@@ -41,4 +43,7 @@ button {
 
 h1 {
   text-align: center;
+}
+
+.content {
 }
