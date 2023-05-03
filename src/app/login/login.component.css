@@ -19,6 +19,17 @@
     min-width: 25%;
   }
 }
+
+video {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: max-content;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 1s opacity;
+}
 /* .fs-Logo {
   min-width: 150px;
   min-height: 150px;
@@ -31,9 +42,14 @@
 
 .google-button,
 .logout-button {
+  position: fixed;
   background-color: white;
-  margin-top: 10%;
-  /* margin-left: 3%;
+  margin-top: 5%;
+  min-width: 15%;
+  margin-left: 5%;
+  /* height: 60px;
+  margin-right: 55%;
+  margin-left: 3%;
   margin: 2%;
   min-width: 15%;
   padding: 2%; */

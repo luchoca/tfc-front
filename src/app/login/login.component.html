@@ -1,8 +1,15 @@
 <div class="formulario">
+  <video
+    controls
+    autoplay
+    [muted]="true"
+    [loop]="true"
+    class="video"
+    src="https://static.videezy.com/system/resources/previews/000/043/256/original/bb4.mp4"
+  ></video>
   <div class="formContainer" [formGroup]="formReg" (ngSubmit)="onRegister()">
     <div class="login">BIENVENIDOS !</div>
-    <mat-form-field appearance="outline" class="email">
-      <!-- <mat-label class="form-label">Email</mat-label> -->
+    <!-- <mat-form-field appearance="outline" class="email">
       <input
         matInput
         placeholder="Introduce tu email"
@@ -16,10 +23,9 @@
       >
         El mail no es válido
       </mat-error>
-    </mat-form-field>
-    <br />
-    <mat-form-field appearance="outline" class="password">
-      <!-- <mat-label class="form-label">Password</mat-label> -->
+    </mat-form-field> -->
+
+    <!-- <mat-form-field appearance="outline" class="password">
       <input
         matInput
         placeholder="Introduce tu pasword"
@@ -33,7 +39,7 @@
       >
         Debe tener como mínimo 6 caracteres
       </mat-error>
-    </mat-form-field>
+    </mat-form-field> -->
     <button mat-flat-button class="registerButton" (click)="onRegister()">
       Registrarse
     </button>
@@ -41,14 +47,14 @@
     <button mat-flat-button class="iniciarSesionButton" routerLink="/products">
       Iniciar Sesion
     </button>
-    <hr />
+
     <button mat-button class="google-button" (click)="loginConGoogle()">
       <mat-icon style="width: 50px; height: 30px" svgIcon="logo"></mat-icon
       >Iniciar Sesion con Google
     </button>
-  </div>
+    <!-- </div> -->
 
-  <!-- <button
+    <!-- <button
     disabled="true"
     style="background-color: rgb(248, 50, 50)"
     mat-button
@@ -58,4 +64,5 @@
     <span class="material-icons">logout</span>
     Logout
   </button> -->
+  </div>
 </div>
