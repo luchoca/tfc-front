@@ -31,10 +31,16 @@ export class ProductComponent implements OnInit {
 
   cargarProd() {
     this._productService.findProducts().subscribe((products) => {
-      console.log(products);
-
       this.productsDto = products;
+      //acá hay que comparar lo del localstorage que es lo que tiene el cli en el carrito
+      // con los datos que obtenemos de la bd que están sin actualizar
+      this.productsDto.sort((a, b) => a.nombre.localeCompare(b.nombre))
     });
+
+    this.products_purchased = JSON.parse(
+      localStorage.getItem('products_purchased') || '[{}]'
+    );
+
   }
 
   openDialog(product: ProductDto): void {
@@ -44,18 +50,31 @@ export class ProductComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: ProductPurchasedDto) => {
       if (result != null) {
+        result.product.stock = result.product.stock - result.quantity;
         if (localStorage.getItem('products_purchased') == null) {
           this.products_purchased = JSON.parse(JSON.stringify([result]));
         } else {
           this.products_purchased = JSON.parse(
             localStorage.getItem('products_purchased') || '[{}]'
           );
+
+          this.products_purchased.forEach((p: ProductPurchasedDto, index: number) => {
+            if (p.product._id === result.product._id) {
+              result.quantity += p.quantity;
+              this.products_purchased.splice(index, 1);
+            }
+          });
           this.products_purchased.push(result);
         }
+
         localStorage.setItem(
           'products_purchased',
           JSON.stringify(this.products_purchased)
         );
+
+        this.productsDto = this.productsDto.filter((p) => p._id !== result.product._id)
+        this.productsDto.push(result.product)
+        this.productsDto.sort((a, b) => a.nombre.localeCompare(b.nombre))
       }
     });
   }

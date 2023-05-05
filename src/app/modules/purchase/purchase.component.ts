@@ -25,8 +25,6 @@ export class PurchaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.products_purchased = this._purchaseService.get();
-    console.log(this.products_purchased);
-
   }
 
   deleteProduct(tableId: number) {
@@ -43,10 +41,7 @@ export class PurchaseComponent implements OnInit {
         let encontrado: boolean = false;
         for (let [key] of Object.entries(this.products_purchased)) {
           if (tableId == Number(key)) {
-            console.log(key)
-            console.log(tableId);
             this.products_purchased.splice(tableId, 1);
-            console.log(this.products_purchased);
             encontrado = true;
             Swal.fire(
               'Eliminado!',
