@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ClientService } from 'src/app/modules/client/service/client.service';
 import { ProductPurchasedService } from 'src/app/modules/product-purchased/service/product-purchased.service';
 
 @Component({
@@ -9,7 +11,22 @@ import { ProductPurchasedService } from 'src/app/modules/product-purchased/servi
 })
 export class HeaderComponent {
   isVisible = true;
-  constructor(private service: ProductPurchasedService) {}
+  showHeader!: boolean;
+
+  constructor(
+    private productPurchaseService: ProductPurchasedService,
+    private clientService: ClientService,
+    protected r: Router
+  ) {
+    r.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.showHeader = event.url !== '/';
+      }
+      console.log('se muestra header?', this.showHeader);
+    });
+  }
+
+  ngOnInit() {}
 
   @ViewChild(MatMenuTrigger)
   trigger!: MatMenuTrigger;
@@ -20,10 +37,15 @@ export class HeaderComponent {
   }
 
   algo(): number {
-    return (this.cantidadCarrito = this.service.devolvemeCantidadCarrito());
+    return (this.cantidadCarrito =
+      this.productPurchaseService.devolvemeCantidadCarrito());
   }
 
   toggleBadgeVisibility() {
     this.hidden = !this.hidden;
+  }
+
+  datosUsuario() {
+    this.clientService.userData();
   }
 }

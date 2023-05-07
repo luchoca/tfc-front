@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
   signOut,
 } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
@@ -34,6 +35,14 @@ export class ClientService {
 
   loginWithGoogle() {
     return signInWithPopup(this.auth, new GoogleAuthProvider());
+  }
+  userData() {
+    this.loginWithGoogle().then((response) => {
+      const nombre = response.user.displayName;
+      const foto = response.user.photoURL;
+      const email = response.user.email;
+      return [nombre, foto, email];
+    });
   }
 
   logout() {

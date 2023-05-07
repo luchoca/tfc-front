@@ -69,8 +69,13 @@ export class LoginComponent {
     this.clientService
       .loginWithGoogle()
       .then((response) => {
-        console.log(response);
-        this.router.navigate(['/products']);
+        console.log('client', response);
+        if (response.operationType === 'signIn') {
+          console.log('el usuario se logeo correctamente');
+          this.router.navigate(['/products']);
+        } else {
+          console.log('no se pudo logear');
+        }
       })
       .catch((error) => console.log(error));
   }

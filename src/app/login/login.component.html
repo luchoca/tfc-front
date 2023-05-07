@@ -1,12 +1,15 @@
 <div class="formulario">
-  <video
-    controls
-    autoplay
-    [muted]="true"
-    [loop]="true"
-    class="video"
-    src="https://static.videezy.com/system/resources/previews/000/043/256/original/bb4.mp4"
-  ></video>
+  <div class="video">
+    <video
+      autoplay
+      [muted]="true"
+      [loop]="true"
+      class="video"
+      type="video/mp4"
+      src="../../assets/comiendo.mp4"
+    ></video>
+  </div>
+
   <div class="formContainer" [formGroup]="formReg" (ngSubmit)="onRegister()">
     <div class="login">BIENVENIDOS !</div>
     <!-- <mat-form-field appearance="outline" class="email">
@@ -40,13 +43,13 @@
         Debe tener como mínimo 6 caracteres
       </mat-error>
     </mat-form-field> -->
-    <button mat-flat-button class="registerButton" (click)="onRegister()">
+    <!-- <button mat-flat-button class="registerButton" (click)="onRegister()">
       Registrarse
     </button>
     <hr />
     <button mat-flat-button class="iniciarSesionButton" routerLink="/products">
       Iniciar Sesion
-    </button>
+    </button> -->
 
     <button mat-button class="google-button" (click)="loginConGoogle()">
       <mat-icon style="width: 50px; height: 30px" svgIcon="logo"></mat-icon

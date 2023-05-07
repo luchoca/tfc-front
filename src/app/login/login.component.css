@@ -30,6 +30,10 @@ video {
   transform: translateX(-50%) translateY(-50%);
   transition: 1s opacity;
 }
+.video {
+  margin: 0;
+  padding: 0;
+}
 /* .fs-Logo {
   min-width: 150px;
   min-height: 150px;
@@ -42,17 +46,7 @@ video {
 
 .google-button,
 .logout-button {
-  position: fixed;
   background-color: white;
-  margin-top: 5%;
-  min-width: 15%;
-  margin-left: 5%;
-  /* height: 60px;
-  margin-right: 55%;
-  margin-left: 3%;
-  margin: 2%;
-  min-width: 15%;
-  padding: 2%; */
 }
 
 .registerButton {

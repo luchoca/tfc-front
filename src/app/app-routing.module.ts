@@ -1,12 +1,9 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { AdminComponent } from './modules/admin/admin.component';
-import { ClientComponent } from './modules/client/client.component';
-import { CreateHambuComponent } from './modules/create-hambu/create-hambu.component';
 import { ProductComponent } from './modules/product/product.component';
 import { PurchaseComponent } from './modules/purchase/purchase.component';
-import { PurchaseHistoryComponent } from './shared/purchase-history/purchase-history.component';
+import { RolesGuard } from './roles/roles.guard';
 
 // const routes: Routes = [
 //   { path: '', component: LoginComponent },
@@ -27,6 +24,7 @@ const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
+    data: { noHeader: true },
   },
   {
     path: '**',

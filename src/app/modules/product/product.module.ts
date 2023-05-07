@@ -9,12 +9,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HeaderModule } from 'src/app/shared/header/header.module';
 
 @NgModule({
-  declarations: [
-    ProductComponent
-  ],
+  declarations: [ProductComponent],
   imports: [
     CommonModule,
     MatIconModule,
@@ -23,7 +22,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatDividerModule,
-    MatDialogModule
-  ]
+    MatDialogModule,
+  ],
 })
-export class ProductModule { }
+export class ProductModule {}
