@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { PurchaseHistoryComponent } from 'src/app/shared/purchase-history/purchase-history.component';
 import { ClientComponent } from './client.component';
 import { CreateHambuComponent } from './create-hambu/create-hambu.component';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'client',
+    canActivate: [AuthGuard],
     component: ClientComponent,
     children: [
       {

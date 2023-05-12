@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Auth, signOut } from '@angular/fire/auth';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ClientService } from 'src/app/modules/client/service/client.service';
@@ -16,13 +17,13 @@ export class HeaderComponent {
   constructor(
     private productPurchaseService: ProductPurchasedService,
     private clientService: ClientService,
-    protected r: Router
+    protected router: Router,
+    private auth: Auth
   ) {
-    r.events.subscribe((event) => {
+    router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.showHeader = event.url !== '/';
       }
-      console.log('se muestra header?', this.showHeader);
     });
   }
 
@@ -47,5 +48,9 @@ export class HeaderComponent {
 
   datosUsuario() {
     this.clientService.userData();
+  }
+
+  logOut() {
+    return signOut(this.auth);
   }
 }

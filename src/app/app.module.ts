@@ -9,7 +9,7 @@ import { ProductPurchasedModule } from './modules/product-purchased/product-purc
 import { ProductModule } from './modules/product/product.module';
 import { PurchaseModule } from './modules/purchase/purchase.module';
 import { NavigationComponent } from './shared/navigation/navigation.component';
-
+// LOCURA CON ESTA LINEA DE ABAJO
 import { CreateHambuModule } from './modules/client/create-hambu/create-hambu.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { MaterialModule } from './modules/material/material.module';
@@ -19,7 +19,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { HeaderModule } from './shared/header/header.module';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { LoginComponent } from './login/login.component';
+
 import { LoginModule } from './login/login.module';
 
 @NgModule({

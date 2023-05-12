@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './modules/product/product.component';
 import { PurchaseComponent } from './modules/purchase/purchase.component';
 import { RolesGuard } from './roles/roles.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 // const routes: Routes = [
 //   { path: '', component: LoginComponent },
@@ -33,15 +34,19 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductComponent,
+    canActivate: [AuthGuard],
     //  ESTAR LOGEADO PARA PODER ACCEDER A PROD O PARA PODE COMPRAR NOMAS
   },
   {
     path: 'purchase',
     component: PurchaseComponent,
+    canActivate: [AuthGuard],
+
     //  ESTAR LOEGADO PARA PODER VER CARRITO
   },
   {
     path: 'client',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('../app/modules/client/client.module').then(
         (module) => module.ClientModule
@@ -49,6 +54,8 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    canActivate: [AuthGuard],
+
     loadChildren: () =>
       import('../app/modules/admin/admin.module').then(
         (module) => module.AdminModule
